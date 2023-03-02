@@ -1,0 +1,116 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul, ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #373434;
+}
+body{
+	font-family: "Playfair Display", Arial, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #000;
+}
+.container{
+	width: 1120px;
+	margin: 0 auto;
+}
+.header-inner{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 70px;
+}
+.menu{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+.menu li{
+	margin: 0 0.4vw;
+}
+.menu a{
+	color: black;
+	font-family: "Playfair Display", Arial, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+}
+.contact{
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+}
+/* .square{
+	display: none;
+} */
+.contact a{
+
+	color: inherit;
+}
+.logo{
+    margin: 10px;
+}
+/* промо-блок */
+.promo{
+	background: rgb(246, 241, 241) url(../Img/Promo.png) no-repeat 50% 0;
+	background-size: cover;
+	/* background-attachment: fixed фиксирует картинку */
+	background-attachment: fixed;
+	
+}
+.promo-inner{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 90vh;	
+}
+.promo h1{
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 85px;
+text-align: center;
+color: #000000;
+margin-bottom: 50px;
+}
+.promo h3{
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 53px;
+text-align: center;
+color: #000000;
+margin-top: 50px;
+}
+.promo p{
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 43px;
+text-align: center;
+color: #000000;
+margin-top: 80px;
+}
+.btn-cta{
+width: 447px;
+height: 56px;
+background: #ED8623;
+border-radius: 10px;
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 42px;
+text-align: center;
+color: #000000;
+margin-top: 30px;
+}
