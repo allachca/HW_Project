@@ -1,0 +1,360 @@
+@import "var.less";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+	font-family: "Source Sans Pro";
+	src: url(../Fonts/SourceSansPro-Regular.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Playfair Display";
+	src: url(../Fonts/PlayfairDisplay-Regular.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Podkova';
+	src: url(../Fonts/Podkova-Regular.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Oswald';
+	src: url(../Fonts/Oswald-Regular.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+:root{
+	--index: calc(1vw + 1vh);
+}
+.flexe(@fdir: row, @justyfy: space-between, @align: center){
+	display: flex;
+	flex-direction: @fdir;
+	justify-content: @justyfy;
+	align-items: @align;
+}
+.effectCard(){
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+}
+ul, ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: @color;
+}
+body{
+	font-family: @familyPD, Arial, Arial, Helvetica, sans-serif;
+	font-size: @size;
+	line-height: 24px;
+	color: @colorText;
+}
+.container{
+	width: 1120px;
+	margin: 0 auto;
+}
+// меню
+.header-inner{
+	.flexe;
+	height: 70px;
+
+.menu{
+	.flexe;
+	li{
+		margin: 0 2vw;
+		a{
+			color: @colorText;
+			font-family: @familyPD;
+			font-size: @sizeH3;
+		}
+	}
+}
+.contact{
+	margin-right: 10px;
+	.flexe(column);
+	width: 200px;
+	background: @colorAccent;
+	border-radius: 10px;
+	
+}
+.square{
+	display: none;
+}
+.contact a{
+	color: inherit;
+}
+.logo{
+    margin: 10px;
+}
+}
+/* промо-блок */
+.promo{
+	background: rgb(246, 241, 241) url(../Img/Promo.png) no-repeat 50% 0;
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+.promo-inner{
+	.flexe(column, space-around);
+		height: 100vh;	
+		padding-top: 10vh;
+	 h1{
+		width: 100%;
+		font-family: @familySSP;
+		font-style: normal;
+		font-weight: 900;
+		font-size: 120px;
+		background-image: radial-gradient(circle, #F8F8FB, #E2B02D, #0683AA);
+		color: transparent;
+  		background-clip: text;
+  		-webkit-background-clip: text;
+		line-height: 110px;
+		letter-spacing: 0.07em;
+		text-align: center;
+		margin-bottom: 50px;
+		}
+	h3{
+		font-family: @familyPD;
+		font-style: normal;
+		font-weight: 400;
+		font-size: @sizeH3 * 1.6;
+		// line-height: 53px;
+		text-align: center;
+		color: @colorPrimery;
+		}
+		.btn-cta{
+		width: 447px;
+		height: 56px;
+		background: @colorAccent;
+		border-radius: 10px;
+		font-family: @familyPD;
+		font-style: normal;
+		font-weight: 400;
+		font-size: @sizeH2;
+		line-height: 56px;
+		text-align: center;
+		color: @colorSecondary;
+		margin-bottom: 30px;
+		}
+}
+// услуги
+.service{
+	margin-top: 3rem;
+&__list{
+	.flexe;
+	flex-flow: wrap;
+}
+&__card{
+	.effectCard();
+	flex: 1 1 28%;
+	max-width: 400px;
+	min-width: 300px;
+	height: calc(var(--index) * 15);
+	min-height: 230px;
+	padding: 30px;
+	overflow: hidden;
+	margin-bottom: calc(var(--index));
+}
+&__title{
+	.flexe();
+	color: @colorSecondary;
+}
+}
+// команда
+.team{
+	margin: 3rem;
+ &__list{
+	.flexe();
+	margin-top: calc(var(--index));
+ }
+ &__card{
+	.flexe(column);
+
+	&--animate{
+	position: relative;
+	overflow: hidden;
+	}
+
+	&--animate .second{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	}
+	&--animate:hover .first{
+	opacity: 0;
+	transition: 1s;
+	}
+ 	&--title{
+	.flexe();
+	border: 1px solid @colorSecondary;
+	width: 100%;
+	h3{
+		color: @colorSecondary;
+	}
+ 	}
+}
+}
+
+// преимущества
+.advant{
+	margin: 3rem;
+	&__list{
+		.flexe;
+	}
+	&__card{
+		flex: 1 1 20%;
+		max-width: 300px;
+		min-width: 200px;
+		height: calc(var(--index));
+		min-height: 200px;
+		text-align: center;
+		padding-top: calc(var(--index));
+		background: @colorAccent;
+		// border: 1px solid red;
+		margin: calc(var(--index));	
+	p{
+		font-family: @familyPodkova;
+		font-style: normal;
+		font-weight: 400;
+		font-size: @sizeTitlle;
+		line-height: 27px;
+		text-align: center;
+		color: @colorPrimery;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}	
+	}
+}
+// портффолио
+.portfolio{
+	margin: 3rem;
+&__click{
+	.flexe(row, start);
+	text-align: center;
+	margin: calc(var(--index)*2);
+	.foto{
+		width: 10vw;
+		height: calc(var(--index) * 2);
+		color: @colorPrimery;
+		background: @colorSecondary;
+	}
+	.video{
+		width: 10vw;
+		height: calc(var(--index) * 2);
+		color: @colorSecondary;
+		border: 1px solid @colorSecondary;
+	}
+}
+&__card{
+	.flexe();
+	img{
+		width: 50%;
+		margin-right: calc(var(--index));
+	}
+}
+}
+.forma{
+	margin-top: 3rem;
+	background: url(../Img/forma.png) no-repeat 50% 0;
+	width: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+&-inner{
+	.flexe();
+	height: 80vh;
+}
+&__text{
+	.flexe(column, space-between, end);
+	width: 50vw;
+	padding: 2rem;
+	height: 60vh;
+ 	.t1{
+	font-family: @familyPodkova;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 33px;
+	color: @colorPrimery;
+	// border: 1px solid @colorText;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ 	}
+	.t2{
+	font-family: @familyPodkova;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 42px;
+	line-height: 33px;
+	color: @colorPrimery;
+		// border: 1px solid @colorText;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+	.t3{
+	font-family: @familyPodkova;
+	font-style: normal;
+	font-weight: 400;
+	font-size: @sizeTitlle;
+	line-height: 27px;
+	color: @colorPrimery;
+	// width: 40vw ;
+	}
+	}
+&__block{
+	.flexe(column);
+	width: 35vw;
+	background: @colorPrimery;
+	// filter: blur(2px);
+	padding: 3rem;
+	text-align: center;
+	height: 60vh;
+	.group-row{
+		.flexe(column);
+		margin-bottom: 2rem;
+	}
+	input{
+		flex: 1 1 auto;
+		border: 1px solid black;
+		background: #D9D9D9;
+		font-size: 20px;
+		text-align: center;
+		width: 100%;
+		height: 40px;
+		margin: 15px;
+		font-family: @familyPodkova;
+	}
+	input[type="submit"]{
+		width: 370px;
+		height: 48px;
+		background: @colorAccent;
+		border-radius: 10px;
+		font-family: @familyPD;
+		font-style: normal;
+		font-weight: 400;
+		font-size: @sizeTitlle;
+		line-height: 24px;
+		// vertical-align: middle;
+		text-align: center;
+		color: @colorSecondary;
+		margin-top: 30px;
+	}
+}
+}
+.footer{
+	background: @colorSecondary;
+	width: 100%;
+	height: 20vh;
+&-inner{	
+	.flexe(row, space-around);
+}
+&__menu, &__contact, &__network{
+	font-family: @familyPodkova;
+	font-size: @size;
+	color: @colorPrimery;
+}
+}
