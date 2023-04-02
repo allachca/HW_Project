@@ -69,6 +69,9 @@ body {
   font-family: 'Playfair Display';
   font-size: 22px;
 }
+.header-inner .menu .square {
+  display: none;
+}
 .header-inner .contact {
   margin-right: 10px;
   display: flex;
@@ -78,9 +81,6 @@ body {
   width: 200px;
   background: #ED8623;
   border-radius: 10px;
-}
-.header-inner .square {
-  display: none;
 }
 .header-inner .contact a {
   color: inherit;
@@ -93,6 +93,7 @@ body {
   background: #f6f1f1 url(../Img/Promo.png) no-repeat 50% 0;
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
 }
 .promo-inner {
   display: flex;
@@ -160,6 +161,24 @@ body {
   overflow: hidden;
   margin-bottom: calc(var(--index));
 }
+.service__card--celebrate {
+  position: relative;
+  overflow: hidden;
+}
+.service__card--celebrate .text {
+  text-align: center;
+  color: #ED8623;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  padding-top: calc(var(--index) * 3);
+}
+.service__card--celebrate:hover .image {
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.7s;
+}
 .service__title {
   display: flex;
   flex-direction: row;
@@ -197,6 +216,7 @@ body {
   object-fit: cover;
 }
 .team__card--animate:hover .first {
+  cursor: pointer;
   opacity: 0;
   transition: 1s;
 }
@@ -330,6 +350,7 @@ body {
   align-items: center;
   width: 35vw;
   background: #FFFFFF;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
   padding: 3rem;
   text-align: center;
   height: 60vh;
@@ -343,7 +364,7 @@ body {
 }
 .forma__block input {
   flex: 1 1 auto;
-  border: 1px solid black;
+  border: 1px solid #373434;
   background: #D9D9D9;
   font-size: 20px;
   text-align: center;
@@ -351,6 +372,22 @@ body {
   height: 40px;
   margin: 15px;
   font-family: 'Podkova';
+}
+.forma__block .check {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.forma__block .check input {
+  flex: 1 1 auto;
+  width: 15px;
+  height: 15px;
+}
+.forma__block .check label {
+  flex: 1 1 auto;
+  font-size: 10px;
 }
 .forma__block input[type="submit"] {
   width: 370px;
@@ -369,7 +406,8 @@ body {
 .footer {
   background: #52281C;
   width: 100%;
-  height: 20vh;
+  min-height: 80%;
+  color: #FFFFFF;
 }
 .footer-inner {
   display: flex;
@@ -383,4 +421,163 @@ body {
   font-family: 'Podkova';
   font-size: 16px;
   color: #FFFFFF;
+}
+@media (max-width: 1120px) {
+  .container {
+    margin: 0 auto;
+  }
+  .header-inner a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 2vw;
+    margin: 0 auto;
+    min-width: 275px;
+  }
+  .header-inner {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    /* кнопка меню */
+  }
+  .header-inner .nav {
+    display: none;
+  }
+  .header-inner .contact {
+    margin-right: 20vw;
+  }
+  .header-inner .contact a {
+    font-size: 16px;
+    background: none;
+  }
+  .header-inner .link_call {
+    display: none;
+  }
+  .header-inner .logo {
+    width: 80px;
+  }
+  .header-inner .square {
+    width: 35px;
+    height: 28px;
+    border: 1px solid black;
+    position: absolute;
+    right: 20px;
+    transition: 1s;
+    display: block;
+  }
+  .header-inner .line {
+    width: 20px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: calc(50% - 10px);
+  }
+  .header-inner .one {
+    top: 6px;
+  }
+  .header-inner .two {
+    top: 12px;
+  }
+  .header-inner .three {
+    top: 18px;
+  }
+  .header-inner .square:hover .two {
+    display: none;
+  }
+  .header-inner .square:hover .one {
+    transform: rotate(45deg);
+    left: calc(50% - 10px);
+    top: calc(50%);
+  }
+  .header-inner .square:hover .three {
+    transform: rotate(-45deg);
+    left: calc(50% - 10px);
+    top: calc(50%);
+  }
+  .promo-inner h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .promo-inner h3 {
+    font-size: 22px;
+  }
+  .promo-inner .btn-cta {
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.1rem;
+    margin-top: 1.1rem;
+  }
+  .team__list {
+    flex-wrap: wrap;
+  }
+  .team__card {
+    padding-top: 1rem;
+  }
+  .advant__list {
+    flex-wrap: wrap;
+  }
+  .portfolio__card {
+    display: block;
+  }
+  .portfolio__card img {
+    width: 100%;
+  }
+  .forma-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .forma__text {
+    display: block;
+    width: 100%;
+  }
+  .forma__text .t1,
+  .forma__text .t2,
+  .forma__text .t3 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .forma__block {
+    width: 70vw;
+    flex: 1 1 auto;
+  }
+  .forma__block input {
+    font-size: 16px;
+    height: 10vh;
+    margin: 1rem;
+  }
+  .forma__block input[type="submit"] {
+    width: 60vw;
+    height: 10vh;
+    font-size: 16px;
+  }
+  .footer {
+    margin-top: calc(var(--index) * 20);
+    width: 100%;
+    height: 100%;
+  }
+  .footer-inner {
+    display: block;
+    text-align: center;
+  }
+  .footer-inner p {
+    font-size: 0.8rem;
+  }
+  .footer-inner svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .promo .btn-cta {
+    width: 90%;
+    margin: 1.2rem auto;
+  }
+  .team__card {
+    text-align: center;
+  }
 }

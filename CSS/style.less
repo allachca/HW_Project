@@ -72,6 +72,9 @@ body{
 			font-size: @sizeH3;
 		}
 	}
+	.square{
+		display: none;
+	}
 }
 .contact{
 	margin-right: 10px;
@@ -81,12 +84,11 @@ body{
 	border-radius: 10px;
 	
 }
-.square{
-	display: none;
-}
 .contact a{
 	color: inherit;
 }
+
+
 .logo{
     margin: 10px;
 }
@@ -96,6 +98,7 @@ body{
 	background: rgb(246, 241, 241) url(../Img/Promo.png) no-repeat 50% 0;
 	background-size: cover;
 	background-attachment: fixed;
+	width: 100%;
 	
 }
 .promo-inner{
@@ -158,6 +161,30 @@ body{
 	padding: 30px;
 	overflow: hidden;
 	margin-bottom: calc(var(--index));
+	 
+
+	&--celebrate{
+	position: relative;
+	overflow: hidden;
+	
+	}
+
+	&--celebrate .text{
+	text-align: center;
+	color: @colorAccent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	padding-top: calc(var(--index) * 3);
+	
+	
+	}
+	&--celebrate:hover .image{
+	cursor: pointer;
+	opacity: 0;
+	transition: 0.7s;
+	}
 }
 &__title{
 	.flexe();
@@ -189,6 +216,7 @@ body{
 	object-fit: cover;
 	}
 	&--animate:hover .first{
+	cursor: pointer;
 	opacity: 0;
 	transition: 1s;
 	}
@@ -309,6 +337,7 @@ body{
 	.flexe(column);
 	width: 35vw;
 	background: @colorPrimery;
+	.effectCard();
 	// filter: blur(2px);
 	padding: 3rem;
 	text-align: center;
@@ -319,7 +348,7 @@ body{
 	}
 	input{
 		flex: 1 1 auto;
-		border: 1px solid black;
+		border: 1px solid @color;
 		background: #D9D9D9;
 		font-size: 20px;
 		text-align: center;
@@ -327,6 +356,19 @@ body{
 		height: 40px;
 		margin: 15px;
 		font-family: @familyPodkova;
+	}
+	.check{
+		.flexe();
+		width: 100%;
+		input{
+			flex: 1 1 auto;
+			width: 15px;
+			height: 15px;
+		}
+		label{
+			flex: 1 1 auto;
+			font-size: 10px;
+		}
 	}
 	input[type="submit"]{
 		width: 370px;
@@ -348,7 +390,8 @@ body{
 .footer{
 	background: @colorSecondary;
 	width: 100%;
-	height: 20vh;
+	min-height: 80%;
+	color: @colorPrimery;
 &-inner{	
 	.flexe(row, space-around);
 }
@@ -356,5 +399,177 @@ body{
 	font-family: @familyPodkova;
 	font-size: @size;
 	color: @colorPrimery;
+}
+}
+@media (max-width: 1120px){
+	.container{
+        margin: 0 auto;
+    }
+    .header-inner a{
+        font-size: 16px;
+    }  
+}
+@media (max-width: 768px){
+	.container{
+        width: 100%;
+        padding: 0 2vw;
+        margin: 0 auto;
+        min-width: 275px;
+    }
+    .header-inner{
+        height: 50px;
+        width: 100%;
+        position: relative;
+   
+	.nav{
+        display: none;
+    }
+	.contact{
+		margin-right: 20vw;
+	
+     a{
+        font-size: 16px;
+        background: none;
+		}
+    }
+    .link_call{
+        display: none;
+    }
+   .logo{
+     width: 80px;
+   }
+   /* кнопка меню */
+   .square{
+    width: 35px;
+    height: 28px;
+    border: 1px solid black;
+    position: absolute;
+    right: 20px;
+    transition: 1s;
+    display: block;
+    }
+    .line{
+    width: 20px;
+    height: 2px;
+    background:  black;
+    position: absolute;
+    left: calc(50% - 10px);
+    }
+    .one{
+    top: 6px;
+    }
+    .two{
+    top: 12px;
+    }
+    .three{
+    top: 18px;
+    }
+    .square:hover .two{
+    display: none;
+    }
+    .square:hover .one{
+    transform: rotate(45deg);
+    left: calc(50% - 10px);
+    top: calc(50%);
+    }
+    .square:hover .three{
+    transform: rotate(-45deg);
+    left: calc(50% - 10px);
+    top: calc(50%);
+    }
+}
+.promo-inner{
+	h1{
+		font-size: 60px;
+		line-height: 60px;
+	}
+	h3{
+		font-size: @sizeH3;
+	}
+	.btn-cta{
+		height: 40px;
+	line-height: 40px;
+	font-size: 1.1rem;
+	margin-top: 1.1rem;
+	}
+}
+.team{
+ &__list{
+	flex-wrap: wrap;
+}
+ &__card{
+	padding-top: 1rem;
+}
+}
+.advant__list{
+	flex-wrap: wrap;
+}
+.portfolio{
+	&__card{
+		display: block;
+		img{
+		width: 100%;
+		}
+	}
+}
+.forma{
+	
+&-inner{
+	.flexe(column);
+}
+&__text{
+	display: block;
+	width: 100%;
+	.t1, .t2, .t3{
+		font-size: @sizeH3;
+		text-align: center;
+	}
+}
+&__block{
+	width: 70vw;
+    flex: 1 1 auto; 
+	input{
+		font-size: @size;
+		height: 10vh;
+		margin: 1rem;
+	}
+	
+	input[type="submit"]{
+		width: 60vw;
+		height: 10vh;
+		font-size: @size;	
+	}
+}
+}
+.footer{
+	margin-top: calc(var(--index) * 20);
+	width: 100%;
+	height: 100%;
+}
+.footer-inner{
+	display: block;
+	text-align: center;
+	// margin-left: calc(var(--index) *10) ;
+	p{
+		font-size: 0.8rem;
+	}
+	svg{
+		width: 1rem;
+		height: 1rem;
+	}
+}
+}
+@media (max-width: 576px){
+	.promo{
+	.btn-cta{
+		width: 90%;
+	
+		margin: 1.2rem auto;
+	}
+}
+.team{
+	&__card{
+		text-align: center;
+	}
 }
 }
